@@ -1,0 +1,587 @@
+/* Link til min font, fandtes ikke på font-awsome */ 
+@import url(https://db.onlinewebfonts.com/c/d892a16d83d379787f84967bc85a5d96?family=Captain+Comic+W01+Italic);
+
+/* Nulstiller margin, padding og box-sizing for alle elementer og angiver standard sans-serif skrifttype */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+/* Sætter baggrundsfarven til #fafafa */ 
+body {
+    background-color: #fafafa;
+}
+
+/*Navbar begynder her */ 
+nav {
+    background-color: #D2b48c;
+    height: 20vh;
+    width: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding: 1em;
+    font-size: 12px;
+    z-index: 1000;
+}
+
+/* Styling af Logo */
+.logo img {
+width: 20vh;
+height: auto;
+}
+
+/* Styling af menu punkter */
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+/* Styling af menupunkter i navbar */
+nav ul li a {
+    color: #000;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 3px;
+    font-family: "Captain Comic W01 Italic";
+    text-align: center;
+    font-size: 1.2vw;
+}
+/* Styling af knappen for mobilen */
+.checkbtn {
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+/* Styling af dropdown-menu */
+ul {
+    list-style: none;
+    text-align: center;
+    z-index: 1000;
+}
+
+ul li {
+    display:  inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    font-size: 13px;
+    color: #d2b48c;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Dropdown bokse i navbar */
+ul li ul.dropdown {
+    display: block;
+    background: #D2b48c;
+    margin: -15px -30px;
+}
+
+ul li ul.dropdown {
+    width: 50vh;
+    position: absolute;
+    z-index: 1000;
+    display: none
+}
+/* Hover effekt for links i navbar */
+ul li a:hover {
+    color: #fafafa;;
+}
+
+/* Hover effekt for links i dropdown */
+ul li:hover ul.dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo2{
+    display: none;
+}
+
+/* Main begynder her */
+/* Sætter mit billede til relativ */ 
+.billede-container {
+    position: relative;
+}
+
+/* Sætter mit overlay tekst til absolute så det kan komme ovenpå billedet. */ 
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 4vw;
+    text-align: center;
+    font-family:"Captain Comic W01 Italic";
+ 
+}
+
+/* Styler mit forside billede, så det fylder hele skærmen, samt sætter højden til auto så det forbliver i billedets oprindelige størrelse */
+.forside-billede {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+}
+
+/* Styling af min section afsnit */ 
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    line-height: 1.5;
+    font-size: 20px
+}
+
+/* Styling af slider */ 
+.container{
+	position: absolute;
+	left: 50%;
+	height: 500px;
+	width: 800px;
+	background: #fafafa;
+	transform: translate(-50%,-50%);
+	border: 1px solid #fff;
+	overflow: hidden;
+    margin-top: 250px;
+}
+.navigator{
+	display: flex;
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	transform: translate(-50%);
+
+}
+.navigator .bar{
+	height: 5px;
+	width: 45px;
+	background: #d2b48c;
+	cursor: pointer;
+    border: 2px solid #000;
+    margin-left: 8px;
+    box-shadow: 2px 2px 6px #fff,-2px -2px 6px #fff;
+}
+.navigator .bar:hover{
+	background: #fff;
+}
+
+/* Skjuler de andre billede */ 
+input[type="radio"]{
+	position: absolute;
+	visibility: hidden;
+}
+.slides{
+	display: flex;
+	height: 100%;
+	width: 500%;
+
+}
+.image{
+	width: 20%;
+	transition: 0.4s ease;
+}
+img{
+	width: 800px;
+	height: 500px;
+}
+
+/* Skubber billederne til venstre, når man trykker videre i slideren */ 
+#btn1:checked ~ .first{
+	margin-left: 0;
+}
+#btn2:checked ~ .first{
+	margin-left: -20%;
+}
+#btn3:checked ~ .first{
+	margin-left: -40%;
+}
+#btn4:checked ~ .first{
+	margin-left: -60%;
+}
+#btn5:checked ~ .first{
+	margin-left: -80%;
+}
+
+
+
+/* Styling af footer begynder her */ 
+footer {
+    margin-top: 550px;
+    height: 200px;
+    width: 100%;
+    padding: 15px;
+    background-color: #d2b48c;
+    display: flex;
+}
+
+.footer-boks {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+h2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Captain Comic W01 Italic";
+}
+
+footer ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: 500;
+    padding: 3px;
+}
+
+footer ul li:hover {
+color: #fafafa;
+    opacity: 0.9;
+}
+
+.kontakt-boks a {
+    color: black;
+}
+
+footer a {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-decoration: none;
+}
+
+.social-boks i {
+    font-size: 24px;
+    color: #000;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 8px;
+    opacity: 0.75;
+    transition: color 0.3s, opacity 0.3s;
+}
+
+.social-boks i:hover {
+    color: #fafafa;
+    opacity: 0.9;
+}
+
+
+
+
+
+
+
+/* Første breakpoint. Her har vi taget udgangspunkt i en iphone 15 som har målene 393px * 852px. */
+/* Repsonsive adjusments, gælder kun når man er på 393px eller under i width */
+/* Grundet min slider er jeg godt klar over man kan scroll ud til højre, men udover det har jeg ændret alt andet så det passser til mobilstørrelse */
+@media screen and (max-width:393px){
+    body {
+        max-width: 393px;
+    }
+
+
+    /* Styling af navbar i breakpoint 393px */ 
+    label.logo{
+        font-size: 5vw;
+        padding-left: 50px;
+    }
+    
+    .checkbtn{
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        font-size: 30px;
+        cursor: pointer;
+        margin-top: -15px;
+        width: 393px;
+    }
+    
+    nav{
+        height: 9vh;
+        width: 393px;
+    }
+    
+    .navbar-ul{
+        position: fixed;
+        width: 393px;
+        height: 100vh;
+        background:#99d4a6;
+        top: 75px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 1000;
+    }
+    
+    nav a:hover {
+        transform: scale(1.2);
+      }
+    
+    nav ul li {
+        display:block;
+        top: -110px;
+        margin:0;
+        line-height: 30px;
+    }
+    
+    nav ul li a {
+        font-size: 20px;
+        display: block;
+        padding: 15px;
+    }
+    
+    nav ul li ul.dropdown {
+        width: 100%;
+        height: 100%;
+        margin: 10px 0;
+      }
+      
+    a:hover, a.active {
+        background: none;
+        color: black;
+    } 
+    #check:checked ~ul {
+        left: 0
+    }
+    
+    
+    ul li ul.dropdown {
+        display: flex;
+        flex-direction: column;
+        background: #99d4a6;
+        align-items: center;
+    }
+    
+    ul li ul.dropdown {
+        width: auto;
+        position: absolute;
+        z-index: 1000;
+        display: none;
+    }
+    /* Hover effekt for links i navbar */
+    ul li a:hover {
+        color: #fafafa;;
+    
+    }
+    
+    /* Hover effekt for links i dropdown */
+    ul li:hover ul.dropdown {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10vh;
+    }
+    
+    .logo {
+        display: none;
+    }
+    
+    .logo2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: -5px;
+    }
+    .logo2 img {
+        width: 70px;
+        height: auto;
+    }
+    #logo-link2:hover {
+        transform: none;
+    }
+        
+    ul li:hover ~ li ul.dropdown {
+        display: none;
+        }
+
+    section {
+        max-width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+/* Skubber billederne til venstre, når man trykker videre i slideren */ 
+/* Her har jeg justeret den sidste til -75% istedet for -80%, for at få den i midten */ 
+#btn1:checked ~ .first{
+	margin-left: 0;
+}
+#btn2:checked ~ .first{
+	margin-left: -20%;
+}
+#btn3:checked ~ .first{
+	margin-left: -40%;
+}
+#btn4:checked ~ .first{
+	margin-left: -60%;
+}
+#btn5:checked ~ .first{
+	margin-left: -75%;
+}
+
+/* Eftersom dette billede var væsentlig større blev jeg nødt til at ændre på størrelsen i mobil tilstand kun */ 
+.image5 img {
+    max-width: 393px;
+    width: 393px;
+}
+
+
+    /* Styling af footer begynder her */ 
+    /* Sætter min footer til column istedet for row, samt footeren kommer ind i midten */
+footer {
+    height: auto;
+    width: 100%;
+    background-color: #d2b48c;
+    margin-top: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-boks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}
+
+
+
+
+
+
+
+
+/* Breakpoint for Ipad skærmstørrelse. Som har målene 1024px * 1366px */ 
+/* Dermed gælder disse ændringer kun indenfor målene 394px til 1024px */
+@media screen and (min-width: 395px) and (max-width: 1024px) {  
+    nav {
+        height: 10vh;
+        padding: 0.5em;
+    }
+    
+    /* Juster logo størrelse i den mindre navbar */
+    .logo img {
+        width: 140px; 
+    }
+    
+    /* Juster skriftstørrelse i navbar */
+    nav ul li a {
+        font-size: 14px; 
+    }
+    
+    ul li ul.dropdown {
+        width: 250px; 
+        height: auto;
+    }
+
+    /* Juster skriftstørrelse for dropdown-menu */
+    ul li ul.dropdown a {
+        font-size: 12px; 
+
+    }
+    
+    /* Juster skriftstørrelse for knappen på mobilen */
+    .checkbtn {
+        font-size: 20px;
+    }
+
+    section {
+        max-width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    /* Styling af footer begynder her */ 
+footer {
+    height: auto;
+    width: 100%;
+    background-color: #d2b48c;  
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-boks {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.kontakt-boks a {
+    margin-left: 0;
+}
+}
+
+
+/* Breakpoint for Macbook skærmstørrelse. Som har målene 2304px * 1310px */ 
+/* Dermed gælder disse ændringer kun indenfor målene 1025px til 2304px */ 
+@media screen and (min-width: 1025px) and (max-width:2304px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    section {
+        max-width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        font-size: 25px;
+    }
+}
+
+/* Sidste breakpoint er for skærmstørrelser over 2304px */
+/* Dermed gælder disse ændringer kun for skærmstørrelser over 2304px */ 
+@media screen and (min-width: 2305px) {
+      /* Styling af navbar */ 
+      nav ul li a {
+        font-size: 3vh;
+    }
+
+    h1 {
+        font-size: 5vh;
+    }
+
+    section {
+        font-size: 25px;
+    }
+
+}
